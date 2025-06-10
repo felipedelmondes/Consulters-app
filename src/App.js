@@ -1,23 +1,20 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import CruipOpenLogin from './CruipOpenLogin';
 
 function App() {
+  const [user, setUser] = useState(null);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {!user ? (
+        <CruipOpenLogin onLogin={setUser} />
+      ) : (
+        <header className="App-header">
+          <p>Bem-vindo, {user.username || 'usuário'}!</p>
+          <button onClick={() => setUser(null)}>Sair</button>
+        </header>
+      )}
     </div>
   );
 }
