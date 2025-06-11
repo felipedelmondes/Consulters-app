@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import CruipOpenLogin from './CruipOpenLogin';
+import Home from './Home';
 
 function App() {
   const [user, setUser] = useState(null);
@@ -10,10 +11,7 @@ function App() {
       {!user ? (
         <CruipOpenLogin onLogin={setUser} />
       ) : (
-        <header className="App-header">
-          <p>Bem-vindo, {user.username || 'usuário'}!</p>
-          <button onClick={() => setUser(null)}>Sair</button>
-        </header>
+        <Home onNavigate={() => {}} token={user.token} hash={user.hash} />
       )}
     </div>
   );
