@@ -1,7 +1,7 @@
 // src/ApiService.js
 
 class ApiService {
-  static API_BASE_URL = 'http://localhost:5512/api'; // URL base da sua API
+  static API_BASE_URL = 'https://consultersit.up.railway.app/api'; // URL base da sua API
 
   
 
